@@ -19,10 +19,10 @@
         @foreach (var movie in Model)
         {
             <tr>
-                <td>@movie.Id</td>
-                <td ><a href = "/movies/getmovie/@movie.Id" > @movie.Name </a></td>
-                <td>@movie.Rating</td>
-                <td>@movie.ReleaseYear</td>
+                <td>
+                    <div class="movieCover"><a href="/movies/getmovie/@movie.Id"><img src="@Url.Content(movie.Cover)" alt="Product Image" width="250" height="300" /></a></div>
+                </td>
+                <td><a href="/movies/getmovie/@movie.Id"> @movie.Name </a></td>
                 <td>@movie.Genre</td>
             </tr>
         }
