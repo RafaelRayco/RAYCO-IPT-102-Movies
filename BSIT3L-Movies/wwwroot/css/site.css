@@ -18,5 +18,115 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #0c0c11;
+}
+
+header {
+    background-color: #0c0c11;
+}
+
+div.movie-list-container {
+    position: relative;
+    left: 0px;
+    right: 20px;
+    margin-bottom: 50px;
+    overflow-x: auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #0c0c11;
+}
+
+div.movie-list-item {
+    padding: 10px;
+}
+
+div.movie-list-detail {
+    text-align: center;
+}
+
+div.movie-list-item-info, h2, p {
+    color: white;
+}
+
+a:-webkit-any-link{
+    color: white;
+    text-decoration: none;
+}
+
+div.movie-details-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.movie-details {
+    border: 1px solid black;
+    margin-left: 20px;
+}
+
+    .movie-details h1 {
+        color: white;
+        font-size: 30px;
+        padding-top: -50px;
+        padding-bottom: -50px;
+    }
+
+    .movie-details p {
+        color: white;
+        padding-top: 0px;
+        font-size: 20px;
+    }
+
+    .movie-details p1 {
+        color: #808080;
+    }
+
+div.movie-poster {
+    justify-self: center;
+    right: 10px;
+    margin-left: 20px;
+    position: relative;
+    margin-right: 5px;
+}
+
+    .movie-poster img {
+        position: relative;
+        height: 320px;
+        width: 225px;
+    }
+
+div.movie-details-synopsis {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .movie-details-synopsis h2 {
+        position: relative;
+        color: white;
+        margin-left: 20px;
+    }
+
+    .movie-details-synopsis p2 {
+        margin: 20px;
+        color: white;
+    }
+
+div.movie-trailer {
+    margin-right: 20px;
 }

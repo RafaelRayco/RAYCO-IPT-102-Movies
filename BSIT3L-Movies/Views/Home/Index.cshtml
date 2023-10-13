@@ -3,29 +3,104 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Rating</th>
-            <th>Release Year</th>
-            <th>Genre</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var movie in Model)
+<h2>All Movies</h2>
+<section id="complete-movie-list">
+    <div class="movie-list-container">
+        @foreach (var movie in Model.OrderByDescending(r => r.ReleaseYear))
         {
-            <tr>
-                <td>
-                    <div class="movieCover"><a href="/movies/getmovie/@movie.Id"><img src="@Url.Content(movie.Cover)" alt="Product Image" width="250" height="300" /></a></div>
-                </td>
-                <td><a href="/movies/getmovie/@movie.Id"> @movie.Name </a></td>
-                <td>@movie.Genre</td>
-            </tr>
+           <div class="movie-list-item">
+               <div class="movie-poster">
+                   <a href="/movies/getmovie/@movie.Id"><img src="@Url.Content(movie.Poster)" alt="Movie Poster" width="225" height="320" /></a>
+               </div>
+               <div class="movie-list-detail">
+                <a href="/movies/getmovie/@movie.Id"> @movie.Name</a>
+                    <div class="movie-list-item-info">
+                        @movie.ReleaseYear
+                    </div>
+                </div>
+           </div>
         }
-    </tbody>
-</table>
+    </div>
+</section>
 
+<h2>Animations</h2>
+<section id="animation-movie-list">
+    <div class="movie-list-container">
+        @foreach (var movie in Model.Where(f => f.Form == "Animation"))
+        {
+            <div class="movie-list-item">
+                <div class="movie-poster">
+                    <a href="/movies/getmovie/@movie.Id"><img src="@Url.Content(movie.Poster)" alt="Movie Poster" width="225" height="320" /></a>
+                </div>
+                <div class="movie-list-detail">
+                    <a href="/movies/getmovie/@movie.Id"> @movie.Name</a>
+                    <div class="movie-list-item-info">
+                        @movie.ReleaseYear
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<h2>Drama</h2>
+<section id="animation-movie-list">
+    <div class="movie-list-container">
+        @foreach (var movie in Model.Where(g => g.Genre == "Drama" || g.Genre == "Romance/Drama" || g.Genre == "Action/Drama" || g.Genre == "Comedy/Drama"
+        || g.Genre == "Comedy/Drama/Musical" || g.Genre == "Horror/Drama/Mystery" || g.Genre == "Comedy/Horror/Drama" || g.Genre == "Crime/Drama/Mystery"
+        || g.Genre == "Crime/Comedy/Drama" || g.Genre == "Comedy/Romance/Drama" || g.Genre == "Adventure/Drama"))
+        {
+            <div class="movie-list-item">
+                <div class="movie-poster">
+                    <a href="/movies/getmovie/@movie.Id"><img src="@Url.Content(movie.Poster)" alt="Movie Poster" width="225" height="320" /></a>
+                </div>
+                <div class="movie-list-detail">
+                    <a href="/movies/getmovie/@movie.Id"> @movie.Name</a>
+                    <div class="movie-list-item-info">
+                        @movie.ReleaseYear
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<h2>Horror</h2>
+<section id="animation-movie-list">
+    <div class="movie-list-container">
+        @foreach (var movie in Model.Where(g => g.Genre == "Horror/Drama/Mystery" || g.Genre == "Comedy/Horror/Drama"))
+        {
+            <div class="movie-list-item">
+                <div class="movie-poster">
+                    <a href="/movies/getmovie/@movie.Id"><img src="@Url.Content(movie.Poster)" alt="Movie Poster" width="225" height="320" /></a>
+                </div>
+                <div class="movie-list-detail">
+                    <a href="/movies/getmovie/@movie.Id"> @movie.Name</a>
+                    <div class="movie-list-item-info">
+                        @movie.ReleaseYear
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<h2>Romance</h2>
+<section id="animation-movie-list">
+    <div class="movie-list-container">
+        @foreach (var movie in Model.Where(g => g.Genre == "Romance/Drama" || g.Genre == "Comedy/Romance/Drama"))
+        {
+            <div class="movie-list-item">
+                <div class="movie-poster">
+                    <a href="/movies/getmovie/@movie.Id"><img src="@Url.Content(movie.Poster)" alt="Movie Poster" width="225" height="320" /></a>
+                </div>
+                <div class="movie-list-detail">
+                    <a href="/movies/getmovie/@movie.Id"> @movie.Name</a>
+                    <div class="movie-list-item-info">
+                        @movie.ReleaseYear
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
