@@ -1,17 +1,31 @@
 ﻿@model BSIT3L_Movies.Models.MovieViewModel
-
-
-<!DOCTYPE html>
-<html>
+@{
+    ViewData["Title"] = @Model.Name;
+}
 <head>
-    <title>Movie</title>
+    <title>@Model.Name</title>
 </head>
 <body>
-    <h2>Movie Details</h2>
-    <p>Movie ID: @Model.Id</p>
-    <p>Movie Name: @Model.Name</p>
-    <p>Rating: @Model.Rating</p>
-    <p>Release Year: @Model.ReleaseYear</p>
-    <p>Genre: @Model.Genre</p>
+    <div class="movie-details-container">
+        <div class="movie-details">
+            <h2>Movie Details</h2>
+            <h1>@Model.Name</h1>
+            <p>Rating: @Model.Rating/10</p>
+            <p1>Release Year</p1><p>@Model.ReleaseYear</p>
+            <p1>Genre</p1><p>@Model.Genre</p>
+            <p>Release Year: @Model.ReleaseYear</p>
+            <p>Genre: @Model.Genre</p>
+        </div>
+        <div class="movie-poster">
+            <img src="@Url.Content(Model.Poster)" alt="Movie Poster" />
+        </div>
+        <div class="movie-trailer">
+            <iframe width="560" height="315" src=@Model.Trailer title="YouTube video player" frameborder="0" 
+            allow="autoplay;" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="movie-details-synopsis">
+        <h2>Synopsis</h2>
+        <p2>@Model.Synopsis</p2>
+    </div>
 </body>
-</html>
